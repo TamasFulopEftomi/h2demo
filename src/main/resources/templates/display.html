@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Details of Boxes</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Mulish&family=Raleway&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+</head>
+<body>
+    <section>
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <table class="table caption-top">
+                    <caption>Boxes</caption>
+                    <thead>
+                        <tr class="border-bottom">
+                            <th>#</th>
+                            <th>Box name</th>
+                            <th>Box type</th>
+                            <th>Boxes in one row</th>
+                            <th>Rows on pallet</th>
+                            <th>Box weight</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-bottom" th:object="${box}" th:each="box,stat : ${boxes}">
+                            <td th:text="${stat.count}">1</td>
+                            <td th:text="*{boxName}">Cardboard Box</td>
+                            <td th:text="*{boxType}">box001</td>
+                            <td th:text="*{boxesInRow}">8</td>
+                            <td th:text="*{rowsOnPallet}">3</td>
+                            <td th:text="*{boxWeight}">1.0</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    </body>
+</html>
